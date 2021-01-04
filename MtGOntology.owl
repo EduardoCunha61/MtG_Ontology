@@ -1,0 +1,2404 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#"
+     xml:base="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ontologia baseada no jogo de cartas Magic the Gathering.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MtGOntology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#baralho_tem_coleção -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#baralho_tem_coleção">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_está_em_baralho"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#possui_carta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_pertence_a_expansao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_pertence_a_expansao">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_tem_carta"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_pertence_a_jogador -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_pertence_a_jogador">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#jogador_tem_carta"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_tem_simbolo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_tem_simbolo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_esta_em_carta"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleçao_contem_designer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleçao_contem_designer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#designer_pertence_coleção"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_definida_por_simbolo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_definida_por_simbolo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_entra_em_torneio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_entra_em_torneio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_está_em_baralho -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_está_em_baralho">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#desenhou -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#desenhou">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_designer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#designer_pertence_a_expansão -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#designer_pertence_a_expansão">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_contem_designer"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#desenhou"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#designer_pertence_coleção -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#designer_pertence_coleção">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#desenhou"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#está_no_baralho -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#está_no_baralho">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#possui_carta"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_contem_designer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_contem_designer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_tem_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#expansao_tem_carta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#jogador_tem_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#jogador_tem_carta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_baralho"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#possui_carta"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_carta"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#carta_tem_simbolo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_coleção"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#possui_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#possui_carta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_esta_em_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_esta_em_carta">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_carta"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_faz_parte_da_expansao -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_faz_parte_da_expansao">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_baralho -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_baralho">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_do_jogador"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_carta">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_coleção -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_coleção">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_designer -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_designer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_carta -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_carta">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_permitida_no_torneio"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_carta"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_do_jogador -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_do_jogador">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_permitida_no_torneio -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#é_permitida_no_torneio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#coleção_entra_em_torneio"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#ataque -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#ataque">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Criatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#custo_de_mana -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#custo_de_mana">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#data_de_lançamento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#data_de_lançamento">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#defesa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#defesa">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Criatura"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_coleção -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_coleção">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_expansão -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_expansão">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_pessoa -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_pessoa">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#numero_cartas_baralho -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#numero_cartas_baralho">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#número_de_cartas -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#número_de_cartas">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pontos_de_vida -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pontos_de_vida">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#raridade -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#raridade">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#subtipo -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#subtipo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Block_Constructed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Block_Constructed">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_coleção"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#raridade"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#pertence_à_expansão"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_coleção"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Criatura -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Criatura">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#ataque"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#defesa"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#subtipo"/>
+                        <owl:hasValue>Aura</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#tem_coleção"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#data_de_lançamento"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#nome_expansão"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#número_de_cartas"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Não_Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Floresta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Floresta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Verde</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ilha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ilha">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Azul</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Modern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Modern">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#torneio_permite_coleção"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Montanha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Montanha">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Vermelho</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Não_Permanente"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#subtipo"/>
+                        <owl:hasValue>Trap</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Não_Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Não_Permanente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Não_Permanente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#raridade"/>
+                        <owl:hasValue>Mitica</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planície -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planície">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Branco</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Preto</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#simbolo_define_coleçao"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Permanente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno_Artefato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno_Artefato">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#cor"/>
+                        <owl:hasValue>Artefato</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Act_of_Treason -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Act_of_Treason">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2E</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Act of Treason</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ad_Nauseam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ad_Nauseam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3PP</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ad Nauseam</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Admonition_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Admonition_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <tem_designer rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Steve_Argyle"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3BBB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Admonition Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Adventuring_Gear -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Adventuring_Gear">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adventuring Gear</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Aegis_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Aegis_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aegis Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Aether_Figment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Aether_Figment">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1A</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aether Fragment</nome>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ilusão</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Akoum_Refuge -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Akoum_Refuge">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akoum Refuge</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara">
+        <data_de_lançamento rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03/10/2008</data_de_lançamento>
+        <nome_expansão rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alara</nome_expansão>
+        <número_de_cartas rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">539</número_de_cartas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alara Reborn</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Algae_Gharial -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Algae_Gharial">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3V</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algae Gharial</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alkoum_Boulderfoot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alkoum_Boulderfoot">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4EE</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Akoum Boulderfoot</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#All_Is_Dust -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#All_Is_Dust">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All Is Dust</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archive_Trap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archive_Trap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3AA</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Archive Trap</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armadilha</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archmage_Ascension -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archmage_Ascension">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor>Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2A</custo_de_mana>
+        <nome>Archmage Ascension</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Arid_Mesa -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Arid_Mesa">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <carta_tem_simbolo rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arid_Mesa</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Armament_Master -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Armament_Master">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Armament Master</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kor Soldier</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Arrow_Volley_Trap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Arrow_Volley_Trap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3BB</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arrow Volley Trap</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trap</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Avenger_of_Zendikar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Avenger_of_Zendikar">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5VV</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avenger of Zendikar</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Bala_Ged_Thief -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Bala_Ged_Thief">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3P</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bala Ged Thief</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human Rogue Ally</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baloth_Cage_Trap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baloth_Cage_Trap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3VV</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baloth Cage Trap</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trap</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baloth_Woodcrasher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baloth_Woodcrasher">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3V</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baloth Woodcrasher</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beast</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho_Eduardo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho_Eduardo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Adventuring_Gear"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#All_Is_Dust"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archive_Trap"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Archmage_Ascension"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Battlegrace_Angel"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Deathless_Angel"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Doom_Blade"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ogres_Cleaver"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planície"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Serra_Angel"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sorin_Markov"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Vampire_Nighthawk"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Voices_from_the_Void"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Angel&apos;s_Herald"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Death&apos;s_Shadow"/>
+        <é_do_jogador rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Eduardo_Cunha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho_Preto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Baralho_Preto">
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Bala_Ged_Thief"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Disentomb"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Doom_Blade"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sorin_Markov"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Vampire_Nighthawk"/>
+        <possui_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Voices_from_the_Void"/>
+        <é_do_jogador rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Josh_Utter-Leyton"/>
+        <numero_cartas_baralho rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numero_cartas_baralho>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Base_Set -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Base_Set">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+        <tem_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <nome_expansão rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Base Set</nome_expansão>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Battlegrace_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Battlegrace_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Battlegrace Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Beast_Hunt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Beast_Hunt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3V</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beast Hunt</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Bestial_Menace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Bestial_Menace">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3VV</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bestial Menace</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carnage_Wurm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carnage_Wurm">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6V</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carnage Wurm</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wurm</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Caustic_Crawler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Caustic_Crawler">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3PP</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caustic Crawler</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Chain_Reaction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Chain_Reaction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2EE</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chain Reaction</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Chandra_Ablaze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Chandra_Ablaze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4EE</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chandra Ablaze</nome>
+        <pontos_de_vida rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</pontos_de_vida>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Conflux</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Covenant_of_Minds -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Covenant_of_Minds">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Covenant of Minds</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Cradle_of_Vitality -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Cradle_of_Vitality">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3B</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cradle of Vitality</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Crucible_of_Fire -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Crucible_of_Fire">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3E</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crucible of Fire</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Cunning_Sparkmage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Cunning_Sparkmage">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2E</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cunning Sparkmage</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human Shaman</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Darksoul_Knight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Darksoul_Knight">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2E</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Darksoul Knight</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Deathless_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Deathless_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deathless Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Disentomb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Disentomb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PP</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Disentomb</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Dispel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Dispel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dispel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Divination -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Divination">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Divination</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Divine_Favor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Divine_Favor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1B</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Divine Favor</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Doom_Blade -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Doom_Blade">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1P</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Doom Blade</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Druidic_Satchel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Druidic_Satchel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Druidic Satchel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Dungrove_Elder -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Dungrove_Elder">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2V</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dungrove Elder</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Eduardo_Cunha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Eduardo_Cunha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jogador"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Emeria_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Emeria_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emeria Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Exp_Zendikar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Exp_Zendikar">
+        <tem_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <tem_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <tem_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <data_de_lançamento rdf:datatype="http://www.w3.org/2001/XMLSchema#string">02/10/2009</data_de_lançamento>
+        <número_de_cartas rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">642</número_de_cartas>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Felidar_Sovereign -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Felidar_Sovereign">
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Felidar Sovereign</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Filigree_Fracture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Filigree_Fracture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2V</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Filigree Fracture</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Flameblast_Dragon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Flameblast_Dragon">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4EE</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flamblast Dragon</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Flashfreeze -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Flashfreeze">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Flashfreeze</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Fledgling_Griffin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Fledgling_Griffin">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1B</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fledgling Griffin</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Griffin</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Floresta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Floresta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Floresta</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Frost_Titan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Frost_Titan">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4AA</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frost Titan</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Gnarlid_Pack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Gnarlid_Pack">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1V</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gnarlid Pack</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Goblin_Roughrider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Goblin_Roughrider">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2E</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goblin Knight</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Greg_Staples -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Greg_Staples">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+        <desenhou rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Serra_Angel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ilha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ilha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ilha</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Infectious_Horror -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Infectious_Horror">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3P</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Infectious Horror</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Inkwell_Leviathan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Inkwell_Leviathan">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7AA</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Inkwell Leviathan</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jason_Chan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jason_Chan">
+        <desenhou rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Vampire_Nighthawk"/>
+        <desenhou rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jace,_the_Mind_Sculptor"/>
+        <nome_pessoa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jason Chan</nome_pessoa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Josh_Utter-Leyton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Josh_Utter-Leyton">
+        <jogador_tem_carta rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jace,_the_Mind_Sculptor"/>
+        <nome_pessoa rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Josh Utter-Leyton</nome_pessoa>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Manaforce_Mace -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Manaforce_Mace">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manaforce Mace</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Maniacal_Rage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Maniacal_Rage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1E</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maniacal Rage</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aura</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Memory_Erosion -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Memory_Erosion">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1AA</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Memory Erosion</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mighty_Emergence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mighty_Emergence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2V</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mighty Emergence</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mindbreak_Trap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mindbreak_Trap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2AA</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mindbreak Trap</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trap</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Montanha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Montanha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Montanha</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ogres_Cleaver -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Ogres_Cleaver">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ogres Cleaver</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planície -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planície">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Planície</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pântano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Terreno"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pântano</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Quest_for_the_Goblin_Lord -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Quest_for_the_Goblin_Lord">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quest for the Goblin Lord</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Raid_Bombardment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Raid_Bombardment">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Encantamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2E</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raid Bombardment</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Razor_Boomerang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Razor_Boomerang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Equipamento"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Razor Boomerang</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Realms_Uncharted -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Realms_Uncharted">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2V</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Realms Uncharted</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Reinforced_Bulwark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Reinforced_Bulwark">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reinforced Bulwark</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wall</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Exp_Zendikar"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rise of the Eldrazi</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Serra_Angel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Serra_Angel">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serra Angel</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shadowfeed -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shadowfeed">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shadowfeed</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shard_Convergence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shard_Convergence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3V</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shard Convergence</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara">
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shards of Alara</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sorin_Markov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sorin_Markov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3PPP</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sorin Markov</nome>
+        <pontos_de_vida rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</pontos_de_vida>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Steelclad_Serpent -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Steelclad_Serpent">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5A</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Steelclad Serpent</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Serpent</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Steve_Argyle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Steve_Argyle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Designer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sunseed_Nurturer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Sunseed_Nurturer">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2B</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sunseed Nurturer</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tanglesap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tanglesap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verde</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1V</custo_de_mana>
+        <nome>Tanglesap</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tezzeret_The_Seeker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tezzeret_The_Seeker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3AA</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tezzeret The Seeker</nome>
+        <pontos_de_vida rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</pontos_de_vida>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Torneio_Block -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Torneio_Block">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Block_Constructed"/>
+        <torneio_permite_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Torneio_Modern_Expansao_Alara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Torneio_Modern_Expansao_Alara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+        <torneio_permite_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+        <torneio_permite_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <torneio_permite_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Unified_Will -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Unified_Will">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Mágica_Instantânea"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1A</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unified Will</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Vampire_Nighthawk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Vampire_Nighthawk">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1PP</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vampire Nighthawk</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vampire</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Viashino_Skeleton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Viashino_Skeleton">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vermelho</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3E</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Viashino Skeleton</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Voices_from_the_Void -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Voices_from_the_Void">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4P</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voices from the Void</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Exp_Zendikar"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worldwake</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <coleção_definida_por_simbolo rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Exp_Zendikar"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zendikar</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Coleção"/>
+        <pertence_à_expansão rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Base_Set"/>
+        <nome_coleção rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012 Core Set</nome_coleção>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Angel&apos;s_Herald -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Angel&apos;s_Herald">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel&apos;s Herald</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Incomum</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angel</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Death&apos;s_Shadow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Death&apos;s_Shadow">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Death&apos;s Shadow</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avatar</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Drana,_Kalastria_Bloodchief -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Drana,_Kalastria_Bloodchief">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3PP</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Drana, Kalastria Bloodchief</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+        <subtipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vampire</subtipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Gideon&apos;s_Avenger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Gideon&apos;s_Avenger">
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+        <ataque rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ataque>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1BB</custo_de_mana>
+        <defesa rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</defesa>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gideon&apos;s Avenger</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rara</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jace,_the_Mind_Sculptor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Jace,_the_Mind_Sculptor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Planeswalker"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2AA</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jace, the Mind Sculptor</nome>
+        <pontos_de_vida rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</pontos_de_vida>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Lich&apos;s_Mirror -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Lich&apos;s_Mirror">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Feitiço"/>
+        <pertence_à_coleção rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+        <cor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artefato</cor>
+        <custo_de_mana rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</custo_de_mana>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lich&apos;s Mirror</nome>
+        <raridade rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mitica</raridade>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-branched_gem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-branched_gem">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Alara_Reborn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-part_gem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-part_gem">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Shards_of_Alara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-shard_shield -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_5-shard_shield">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Conflux"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron">
+        <rdf:type rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Simbolo"/>
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Zendikar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron_Opened -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron_Opened">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Rise_of_the_Eldrazi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron_Opening -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_Hedron_Opening">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Worldwake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_M12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Symbol:_M12">
+        <simbolo_define_coleçao rdf:resource="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#2012_Core_Set"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Carta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Expansão"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Pessoa"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#Tipo_de_Torneio"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

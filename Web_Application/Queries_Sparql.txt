@@ -1,0 +1,108 @@
+﻿PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX mtg: <http://www.semanticweb.org/eduardo/ontologies/2018/5/untitled-ontology-14#>
+
+Number of cards per colour.
+select ?cor (count(distinct ?card) as ?contagens)
+WHERE {
+	?card mtg:cor ?cor.
+}
+GROUP BY ?cor
+
+Lists all the cards names and the collection these are part of.
+select ?name ?color ?collection
+where{
+	?c mtg:tem_carta ?card.
+    ?card mtg:nome ?name.
+    ?card mtg:cor ?color.
+    ?c mtg:nome_coleção ?collection.
+}
+
+Lists the names of the green creature cards.
+select ?name ?color
+where{
+	?c mtg:tem_carta ?card.
+    ?card mtg:nome ?name.
+    ?card mtg:ataque ?at.
+    ?card mtg:cor ?color.
+    FILTER(regex(str(?color), "Verde")).
+}
+
+Lists cards of subtype "Angel", their colours and their collections.
+select ?card ?subtipo ?cor
+where{
+	?c mtg:tem_carta ?card.
+    ?card mtg:nome ?name.
+    ?card mtg:subtipo ?subtipo.
+    FILTER(regex(str(?subtipo), "Angel")).
+    ?card mtg:cor ?cor.
+}
+
+Lists all mythic sorceries
+select ?card ?rarity
+where{
+    ?card rdf:type mtg:Feitiço.
+	?card mtg:raridade ?rarity.
+    FILTER(regex(str(?rarity), "Mitica")).
+}
+
+Lists all cards that belong to collection "Alara" in the deck "baralho_Eduardo".
+select ?card ?rarity
+where{
+    ?col mtg:pertence_à_expansão ?exp.
+    FILTER(regex(str(?exp), "Alara")).
+    ?card mtg:está_no_baralho ?deck.
+    FILTER(regex(str(?deck), "Baralho_Eduardo")).
+	?card mtg:pertence_à_coleção ?col.
+    ?card mtg:raridade ?rarity.
+}
+
+Lists all the cards designed by "Jason Chan".
+select ?card ?designer
+where{
+    ?designer mtg:desenhou ?card.
+    FILTER(regex(str(?designer), "Jason_Chan")).
+}
+
+Lists all the black cards present in any deck and their mana costs
+select ?carta ?custo_de_Mana ?baralho
+where{
+    ?carta mtg:cor ?cor
+    FILTER(regex(str(?cor), "Preto")).
+    ?carta mtg:custo_de_mana ?custo_de_Mana.
+	?carta mtg:está_no_baralho ?baralho.
+}
+
+Orders all creatures by highest attack points, showing their attack and defense points, mana cost and rarity.
+select ?carta ?ataque ?defesa ?custo_de_Mana ?raridade
+where{
+    ?carta mtg:ataque ?ataque.
+    ?carta mtg:defesa ?defesa.
+    ?carta mtg:custo_de_mana ?custo_de_Mana.
+    ?carta mtg:raridade ?raridade.
+}
+order by DESC(?ataque)
+
+Lists all the cards of expansion 'Zendikar' which rarity is mythic.
+select ?carta ?raridade ?cor ?expansão 
+where{
+    ?expansão mtg:tem_coleção ?col.
+    FILTER(regex(str(?expansão), "Exp_Zendikar")).
+    ?carta mtg:raridade ?raridade.
+    FILTER(regex(str(?raridade), "Mitica")).
+    ?col mtg:tem_carta ?carta.
+    ?carta mtg:cor ?cor.
+}
+
+Lists the cards allowed in tourney "torneio_block" that are in deck "baralho_Eduardo"
+select ?carta ?baralho ?coleção ?cor
+where{
+	?tourney mtg:torneio_permite_coleção ?coleção
+    FILTER(regex(str(?tourney), "Torneio_Block")).
+    ?baralho mtg:possui_carta ?carta.
+    FILTER(regex(str(?baralho), "Baralho_Eduardo")).
+    ?coleção mtg:tem_carta ?carta.
+	?carta mtg:cor ?cor.
+}
